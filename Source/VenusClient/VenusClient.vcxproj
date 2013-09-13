@@ -1,0 +1,172 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{F83C4289-9987-4513-A4A4-3D0A5DA97246}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>VenusClient</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(SolutionDir)Binary\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)Temp\$(ProjectName)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;ANGLE_DX11;_WIN32_WINNT=0x0602;WINVER=0x0602;PSAPI_VERSION=1;_CRT_RAND_S;NOMINMAX;CERT_CHAIN_PARA_HAS_EXTRA_FIELDS;WIN32_LEAN_AND_MEAN;_ATL_NO_OPENGL;_HAS_EXCEPTIONS=0;_SECURE_ATL;CHROMIUM_BUILD;TOOLKIT_VIEWS=1;USE_LIBJPEG_TURBO=1;ENABLE_ONE_CLICK_SIGNIN;ENABLE_REMOTING=1;ENABLE_WEBRTC=1;ENABLE_PEPPER_CDMS;ENABLE_CONFIGURATION_POLICY;ENABLE_INPUT_SPEECH;ENABLE_NOTIFICATIONS;ENABLE_GPU=1;ENABLE_EGLIMAGE=1;__STD_C;_CRT_SECURE_NO_DEPRECATE;_SCL_SECURE_NO_DEPRECATE;NTDDI_VERSION=0x06020000;ENABLE_TASK_MANAGER=1;ENABLE_EXTENSIONS=1;ENABLE_PLUGIN_INSTALLATION=1;ENABLE_PLUGINS=1;ENABLE_SESSION_SERVICE=1;ENABLE_THEMES=1;ENABLE_AUTOFILL_DIALOG=1;ENABLE_BACKGROUND=1;ENABLE_AUTOMATION=1;ENABLE_GOOGLE_NOW=1;ENABLE_LANGUAGE_DETECTION=1;ENABLE_PRINTING=1;ENABLE_CAPTIVE_PORTAL_DETECTION=1;ENABLE_APP_LIST=1;ENABLE_SETTINGS_APP=1;ENABLE_MANAGED_USERS=1;USING_CEF_SHARED;__STDC_CONSTANT_MACROS;__STDC_FORMAT_MACROS;DYNAMIC_ANNOTATIONS_ENABLED=1;WTF_USE_DYNAMIC_ANNOTATIONS=1;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\libcef_dll_wrapper\;..\libcurl\;.</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(SolutionDir)Lib\$(Configuration)\</AdditionalLibraryDirectories>
+      <AdditionalDependencies>wininet.lib;dnsapi.lib;version.lib;msimg32.lib;ws2_32.lib;usp10.lib;psapi.lib;dbghelp.lib;winmm.lib;shlwapi.lib;kernel32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;user32.lib;uuid.lib;odbc32.lib;odbccp32.lib;delayimp.lib;comctl32.lib;rpcrt4.lib;opengl32.lib;glu32.lib;$(SolutionDir)Lib\$(Configuration)\libcef.lib;$(SolutionDir)Lib\$(Configuration)\libcef_dll_wrapper.lib;$(SolutionDir)Lib\$(Configuration)\DuiLib.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="base64.cpp" />
+    <ClCompile Include="BrowserFrame.cpp" />
+    <ClCompile Include="cefclient\binding_test.cpp" />
+    <ClCompile Include="cefclient\cefclient.cpp" />
+    <ClCompile Include="cefclient\cefclient_osr_widget_win.cpp" />
+    <ClCompile Include="cefclient\client_app.cpp" />
+    <ClCompile Include="cefclient\client_app_delegates.cpp" />
+    <ClCompile Include="cefclient\client_handler.cpp" />
+    <ClCompile Include="cefclient\client_handler_win.cpp" />
+    <ClCompile Include="cefclient\client_renderer.cpp" />
+    <ClCompile Include="cefclient\client_switches.cpp" />
+    <ClCompile Include="cefclient\dialog_test.cpp" />
+    <ClCompile Include="cefclient\dom_test.cpp" />
+    <ClCompile Include="cefclient\osrenderer.cpp" />
+    <ClCompile Include="cefclient\performance_test.cpp" />
+    <ClCompile Include="cefclient\performance_test_tests.cpp" />
+    <ClCompile Include="cefclient\resource_util_win.cpp" />
+    <ClCompile Include="cefclient\scheme_test.cpp" />
+    <ClCompile Include="cefclient\string_util.cpp" />
+    <ClCompile Include="cefclient\window_test.cpp" />
+    <ClCompile Include="cefclient\window_test_win.cpp" />
+    <ClCompile Include="Common.cpp" />
+    <ClCompile Include="Ftp.cpp" />
+    <ClCompile Include="HttpManager.cpp" />
+    <ClCompile Include="HttpThread.cpp" />
+    <ClCompile Include="ListViewManager.cpp" />
+    <ClCompile Include="LoginFrame.cpp" />
+    <ClCompile Include="MainFrame.cpp" />
+    <ClCompile Include="md5.cpp" />
+    <ClCompile Include="MiniDumper.cpp" />
+    <ClCompile Include="ServerManager.cpp" />
+    <ClCompile Include="StdAfx.cpp" />
+    <ClCompile Include="SystemTray.cpp" />
+    <ClCompile Include="tea.cpp" />
+    <ClCompile Include="Thread.cpp" />
+    <ClCompile Include="TreeViewManager.cpp" />
+    <ClCompile Include="WinMain.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="base64.h" />
+    <ClInclude Include="BrowserFrame.h" />
+    <ClInclude Include="cefclient\binding_test.h" />
+    <ClInclude Include="cefclient\cefclient.h" />
+    <ClInclude Include="cefclient\cefclient_osr_widget_win.h" />
+    <ClInclude Include="cefclient\client_app.h" />
+    <ClInclude Include="cefclient\client_handler.h" />
+    <ClInclude Include="cefclient\client_renderer.h" />
+    <ClInclude Include="cefclient\client_switches.h" />
+    <ClInclude Include="cefclient\dialog_test.h" />
+    <ClInclude Include="cefclient\dom_test.h" />
+    <ClInclude Include="cefclient\osrenderer.h" />
+    <ClInclude Include="cefclient\performance_test.h" />
+    <ClInclude Include="cefclient\performance_test_setup.h" />
+    <ClInclude Include="cefclient\resource.h" />
+    <ClInclude Include="cefclient\resource_util.h" />
+    <ClInclude Include="cefclient\scheme_test.h" />
+    <ClInclude Include="cefclient\string_util.h" />
+    <ClInclude Include="cefclient\util.h" />
+    <ClInclude Include="cefclient\window_test.h" />
+    <ClInclude Include="Common.h" />
+    <ClInclude Include="Ftp.h" />
+    <ClInclude Include="HttpManager.h" />
+    <ClInclude Include="HttpThread.h" />
+    <ClInclude Include="ListViewManager.h" />
+    <ClInclude Include="LoginFrame.h" />
+    <ClInclude Include="MainFrame.h" />
+    <ClInclude Include="md5.h" />
+    <ClInclude Include="MiniDumper.h" />
+    <ClInclude Include="PagerViewManager.h" />
+    <ClInclude Include="ResGuard.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="ServerManager.h" />
+    <ClInclude Include="Singleton.h" />
+    <ClInclude Include="StdAfx.h" />
+    <ClInclude Include="SystemTray.h" />
+    <ClInclude Include="tea.h" />
+    <ClInclude Include="Thread.h" />
+    <ClInclude Include="TreeViewManager.h" />
+    <ClInclude Include="MetaDefine.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="VenusClient.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\Binary\Resource\Images\logo.ico" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
